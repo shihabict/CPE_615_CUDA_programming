@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#PBS -N grayscale
+#PBS -q classgpu
+#PBS -l select=1:gpuname=ampere:ngpus=1:ncpus=1:mpiprocs=1:mem=1000mb
+#PBS -l walltime=1:00:00
+#PBS -j oe
+#PBS -o grayscale.qsub_out
+
+# change into submission directory
+cd $PBS_O_WORKDIR
+
+# list NVIDIA cards, make clean, load the cuda module, make, and run main
+lspci -vvv | grep "NVIDIA" && \
+  make clean && \
+  module load cuda && \
+  make main && \
+  ./main

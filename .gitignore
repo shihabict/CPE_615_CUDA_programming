@@ -1,0 +1,23 @@
+
+*.idea
+data/
+__pycache__/
+# Ignore Jupyter Notebook checkpoints (if using notebooks)
+.ipynb_checkpoints/
+
+# Ignore log files and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+*.iml
+
+env/
+*.env
+*.pdf
+*.json
+*.csv
